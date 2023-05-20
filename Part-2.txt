@@ -1,0 +1,47 @@
+PROJECT 1 PART 2 
+
+
+Project Deliverables and Specification - Part 2 
+-----------------------------------------------
+
+In your first project part 2 you will use system calls to obtain and print to standard output the following information for each of  
+the parent and child processes of Part 1. Your Part 2 source code is to be added to the source code of Part 1. Therefore, you will
+submit one source code containing both Parts 1 and 2. You will also discuss Part 2 in your program write-up.  
+
+1. pid of the process     
+
+2. pid of the parent process
+
+3. current working directory of the process
+
+4. hostname of the process
+
+
+You will also obtain and and print to standard output the following information about the Operating System (OS) at the start of
+the parent process execution.
+
+1. OS name     
+
+2. OS release
+
+3. OS version
+
+
+Project Instructions - Part 2
+-----------------------------
+
+1) You will use the following system calls: gethostname(), getpid(), getppid(), getcwd(), and uname().
+
+2) Refer to the instructions in the manual pages for the usage of the system calls in (1) above.
+
+3) Use the output format as follows and replace the symbols in capital letters with their actual values obtained
+   from the system calls:
+
+ Process ID is:\t PROCESS_PID \n
+ Parent process ID is:\t PARENT_PROCESS_PID \n
+ Process current working directory is:\t CURRENT_WORKING_DIRECTORY \n
+ Hostname is:\t HOSTNAME \n
+
+ OS name is:\t OS_NAME \n
+ OS release is:\t OS_RELEASE \n
+ OS version is:\t OS_VERSION \n

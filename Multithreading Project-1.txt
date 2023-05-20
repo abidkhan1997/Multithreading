@@ -1,0 +1,101 @@
+PROJECT 1 PART 1 
+
+
+Project Deliverables - Part 1 
+-----------------------------
+
+Your project deliverables are to be posted to CUNY Blackboard using the Project 1 link.
+
+1) Only one source code file as follows with filename format showing your last name and student id: MYLASTNAME_MYSTUDENTID.c  
+
+ a) At top of the file: your full name and student id in comments, for example:  // MYFIRSTNAME MYLASTNAME MYSTUDENTID
+
+ b) In-line code comments no fewer than every 5 lines of code which describe your algorithmic steps in plain English language.
+    That is, I do not want to see literal syntax transcriptions of the code.  
+
+2) An MS Word or PDF document with a write-up of your software design and an explanation of the issues encountered and resolved. (1 page)
+   The write-up is essay style with no bullet points nor itemized lists nor source code nor pseudo-code listings.
+  
+   Filename format is MYLASTNAME_MYSTUDENTID.doc (or pdf).  You are to use Times New Roman Font with font size = 11 and 1.5 line spacing.
+
+3) Text file of program output (text files only, that is, no graphics files from copying screen output) according to output format in  
+   Project Instructions further below for your program execution. I will provide sample input files and sample program execution commands 
+   on CUNY Blackboard for which program output is to be submitted.
+
+4) Please please ensure that your program will compile and link using the GNU C compiler. I will compile and link your source code to
+   generate an executable file using the following command:
+ 
+	gcc MYLASTNAME_MYSTUDENTID.c  -o MYLASTNAME_MYSTUDENTID.exe
+
+
+
+Project Specification - Part 1 
+-------------------------------
+
+In your first project you will design and implement a program that, when executed, has both a parent process and a child process. You use the fork()
+system call to create a child process. The exec() system call is NOT to be used in this project. The parent and child utilize only two IPC
+resources between them: one POSIX message queue and one ordinary pipe.  
+
+Your program execution and command line arguments follows this syntax to provide counts for each input given on the command line:
+
+./MYLASTNAME_MYSTUDENTID.exe [OPTION]... BUFFER_SIZE [INPUT FILE]...
+
+The OPTIONS are the following. If none are specified on the command line then -ncb is used by default.
+
+-n   prints the newline count for each input 
+-c   prints the word counts for each input
+-b   prints the character counts for each input
+-m   prints the maximum line length for each input
+
+BUFFER_SIZE is a number between 32 and 256 inclusively and must be specified. 
+
+[INPUT FILE] contains a list of input files. If no input file is specified, then myinpfile.txt is used. 
+
+
+Project Instructions - Part 1
+-----------------------------
+
+1) Your program source code must be provided in the C programming language.
+
+2) Your program must use the POSIX system file I/O and process management system calls which were discussed in lectures and
+   reading assignments as well as those for POSIX message queues and ordinary pipes. 
+
+3) You are NOT permitted to use any C standard I/O library functions nor string library functions.
+
+4) Only the child process will read the input as given by [INPUT FILE]. The child will write the input file contents
+   in chunks as indicated by BUFFER_SIZE to the pipe. The parent will read this content from the pipe in chunks as indicated by
+   BUFFER_SIZE.
+
+5) The parent process will compute the counts as indicated by [OPTION] for each input file separately from any other input file.
+
+6) The parent process will send each count (as indicated by [OPTION]) for each input file as its own POSIX message into the POSIX message
+   queue. Therefore, as an example, if -ncbm is indicated with three input files on the command line, the parent process will send at least
+   4 * 3 = 12 messages into the POSIX message queue.
+
+7) The child process will receive the messages from (6) above in the POSIX message queue and will write the following to standard output
+   in the following format according to each [OPTION] requested for each input file [INPUT FILE] where NEWLINE_COUNT indicates the newline
+   count, WORD_COUNT is the word count, CHAR_COUNT is the character count, and MAX_LINE is the maximum line length.
+
+    
+    INPUT_FILE:\t newline count is:\t NEWLINE_COUNT \n
+
+    INPUT_FILE:\t word count is:\t WORD_COUNT \n
+
+    INPUT_FILE:\t character count is:\t CHAR_COUNT \n
+
+    INPUT_FILE:\t maximum line length is:\t MAX_LINE \n
+
+
+8) After all input files have been processed and the standard output in (7) has been generated, the parent and child processes will 
+   terminate. The parent will print its last output to standard output as follows:
+
+   Parent: Terminating.\n
+
+   
+   Similarly, The child will print its last output to standard output as follows:
+
+   Child: Terminating.\n
+
+
+
+

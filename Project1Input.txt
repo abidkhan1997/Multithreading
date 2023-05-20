@@ -1,0 +1,18 @@
+The Department of Computer Science offers undergraduate majors in Computer Science 
+as part of Bachelor of Science (BS) and Bachelor of Arts (BA) degree programs. The BS 
+augments the BA with more computer science, mathematics, and experimental laboratory courses. 
+In addition, the Department offers four undergraduate minors in Computer Science, Computer 
+Information Technology (CIT), Computational Linguistics, and Financial Modeling. This page 
+contains information about each of these options. 
+For students not majoring or minoring in Computer Science, CSCI 12 provides an understanding of 
+how problems are formulated for solution by a personal computer using popular software packages. 
+CSCI 111 teaches introductory programming for students who have never used a computer, and serves as 
+a first course for students considering a major or minor in computer science. See the Courses and 
+Schedule page for more details about these courses. 
+The Department of Computer Science offers a Master of Arts (MA) degree in Computer Science. 
+The PhD Program in Computer Science is based at the CUNY Graduate Center and is offered in collaboration  
+with other CUNY colleges. PhD students may be advised by and conduct research with faculty members in the 
+Department of Computer Science at Queens College who have a joint appointment in the doctoral program. 
+Students interested in doctoral studies should consult the PhD Program in Computer Science and CUNY Graduate 
+Center websites for more information. The Accelerated Masters Degree program is available to qualified 
+Queens College CS undergraduates.
